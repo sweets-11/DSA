@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>birthdate</title>
+  </head>
+  <body>
+    <h2><p id="date"></p></h2>
+
+    <h3>Days</h3>
+    <p id="dat"></p>
+
+
+    <h3>Hours</h3>
+    <p id="date1"></p>
+
+    <h3>Minutes</h3>
+    <p id="date2"></p>
+
+    <h3>Seconds</h3>
+    <p id="date3"></p>
+
+    <h3>Millisecond</h3>
+    <p id="date4"></p>
+
+    <script>
+      var enteredDate = window.prompt("Enter your date of birth : yyyy-mm-dd");
+      var givenDate = new Date(enteredDate);
+      var currentDate = new Date();
+
+      var birthYear = givenDate.getFullYear();
+      var currentYear = currentDate.getFullYear();
+      var year = currentYear - birthYear;
+      var millisecond = Date.parse(enteredDate);
+      var milsec = Date.parse(currentDate);
+      var diff_milli_secc = milsec - millisecond;
+
+      var sec = Math.floor(diff_milli_secc / 1000);
+
+      var min = Math.floor(sec / 60);
+      var hours = Math.floor(sec / 60 / 60);
+      var dat = Math.round(hours / 24);
+
+
+      document.getElementById("dat").innerHTML = dat;
+
+      document.getElementById("date1").innerHTML = hours;
+      document.getElementById("date2").innerHTML = min;
+      document.getElementById("date3").innerHTML = sec;
+      document.getElementById("date4").innerHTML = diff_milli_secc;
+
+      document.getElementById("date").innerHTML =
+        "You are " + year + " year's old";
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Current day</h1>
+<h2><p id="day"></p></h2>
+
+<script>
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+var curr = new Date();
+let day = days[curr.getDay()];
+document.getElementById("day").innerHTML = day;
+</script>
+
+</body>
+</html>
